@@ -6,3 +6,4 @@ MAINTAINER necrose99 necrose99@protmail.ch mike@michaellawrenceit.com
 ADD provision.sh /
 
 RUN /provision.sh
+VOLUME /usr/portage
