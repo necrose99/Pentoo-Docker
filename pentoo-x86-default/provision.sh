@@ -1,6 +1,7 @@
 # This provisions iso's into Docker containers.
 
 mkdir newWorldOrder; cd newWorldOrder ; mkdir /newWorldOrder/pentoo_tmp; cd  /newWorldOrder/pentoo_tmp
+mkdir -p /newWorldOrder/usr/portage/distfiles /newWorldOrder/usr/portage/metadata /newWorldOrder/usr/portage/packages
 wget -bqc http://www.pentoo.ch/isos/latest-iso-symlinks/pentoo-x86-default.iso
 7z x *.iso
 echo "pentoo-x86-default.iso unpacking"
