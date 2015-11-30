@@ -4,7 +4,6 @@ MAINTAINER necrose99 necrose99@protmail.ch mike@michaellawrenceit.com
 RUN mkdir -p /usr/portage/distfiles /usr/portage/metadata /usr/portage/packages
 ADD provision.sh /
 RUN /provision.sh
-VOLUME /usr/portage
 # Setup the (virtually) current runlevel
 RUN echo "default" > /run/openrc/softlevel
 
@@ -20,3 +19,5 @@ RUN ln -s /etc/init.d/net.eth0 /run/openrc/started/net.eth0
 
 # By default, UTC system
 RUN echo 'UTC' > /etc/timezone
+# add volume to keep build packages 
+VOLUME /usr/portage
