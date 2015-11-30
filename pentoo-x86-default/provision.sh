@@ -1,4 +1,4 @@
-# This one should be present by ning the build.sh script
+# This provisions iso's into Docker containers.
 
 mkdir newWorldOrder; cd newWorldOrder ; mkdir /newWorldOrder/pentoo_tmp; cd  /newWorldOrder/pentoo_tmp
 wget -bqc http://www.pentoo.ch/isos/latest-iso-symlinks/pentoo-x86-default.iso
