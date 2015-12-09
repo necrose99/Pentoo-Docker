@@ -1,4 +1,8 @@
 #Add sync portage
+# kill add repo derpyness... 
+RUN sed -i 's/^check_official.*/check_official : no/' /etc/layman/layman.cfg
+RUN layman --fetch
+### 
 emerge-webrsync -q 
 layman -S
 # update pentoo.
