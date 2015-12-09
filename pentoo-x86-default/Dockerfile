@@ -21,4 +21,4 @@ RUN ln -s /etc/init.d/net.eth0 /run/openrc/started/net.eth0
 RUN echo 'UTC' > /etc/timezone
 # add volume to keep build packages 
 VOLUME /usr/portage:rw", /usr/portage/distfiles:rw, /usr/portage/distfiles:rw
-VOLUME  /var/lib/layman:rw"
+VOLUME  "/var/lib/layman:rw"
