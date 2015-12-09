@@ -7,3 +7,4 @@ RUN /provision.sh
 
 VOLUME /usr/portage
 VOLUME /var/lib/layman
+CMD /bin/bash
