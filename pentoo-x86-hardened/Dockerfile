@@ -1,9 +1,10 @@
-FROM gentoo/stage3-amd64-hardened
+FROM necrose99/gentoo-x86-hardened/
 
 MAINTAINER necrose99 necrose99@protmail.ch mike@michaellawrenceit.com
 
 ADD https://raw.githubusercontent.com/alexdux/async-emerge-overlay/master/async-emerge.conf /etc/portage/repos.conf/async-emerge.conf
 ADD https://raw.githubusercontent.com/necrose99/Pentoo-Docker/master/build/pentoo.conf /etc/portage/repos.conf/pentoo.conf 
+
 #Add portage 
 wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2 /
 mkdir -p /usr/portage/distfiles /usr/portage/metadata /usr/portage/packages 
@@ -25,12 +26,11 @@ echo 'source /var/lib/layman/make.conf' >> /etc/portage/make.conf
 sed -i 's/^check_official.*/check_official : no/' /etc/layman/layman.cfg 
 layman --fetch 
 layman -L && Layman -a pentoo && layman -a sabayon && layman -a sabayon-distro
+
 # This one should be present by running the build.sh script
 RUN echo "Getting layman"
 RUN emerge -v layman
 RUN layman -S && layman -a pentoo
 RUN eslect profile set pentoo:pentoo/hardened/linux/amd64/bleeding_edge
 RUN pentoo-updater
-
-
 
