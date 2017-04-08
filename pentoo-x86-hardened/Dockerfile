@@ -1,4 +1,4 @@
-FROM necrose99/gentoo-x86-hardened/
+FROM scratch
 
 MAINTAINER necrose99 necrose99@protmail.ch mike@michaellawrenceit.com
 
