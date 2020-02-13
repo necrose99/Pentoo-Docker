@@ -12,6 +12,7 @@ WORKDIR /gentoo
 MAINTAINER necrose99 necrose99@protmail.ch mike@michaellawrenceit.com
 
 ADD https://raw.githubusercontent.com/alexdux/async-emerge-overlay/master/async-emerge.conf /gentoo/etc/portage/repos.conf/async-emerge.conf
+# async-emerge useful for flying chroot rebuilds etc. 
 ADD https://raw.githubusercontent.com/necrose99/Pentoo-Docker/master/build/pentoo.conf /gentoo/etc/portage/repos.conf/pentoo.conf 
 #Add portage 
 wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2 /gentoo
