@@ -19,10 +19,14 @@ mkdir -p /gentoo/usr/portage/distfiles /gentoo/usr/portage/metadata /gentoo/usr/
 bunzip2 -c  /portage-latest.tar.bz2 | tar -xf - -C /gentoo/usr 
 rm /portage-latest.tar.bz2 
 
-#Add Layman
+#Add Layman / portage stuffs. 
 mkdir /gentoo/etc/portage/package.accept_keywords 
 mkdir -p /gentoo/etc/portage/package.use 
 ADD https://www.pentoo.ch/isos/latest-iso-symlinks/pentoo-full-amd64-hardened-latest.iso /pentootmp 
-
-
+RUN 7z x  /pentootmp/pentoo-full-amd64-hardened-latest.iso /pentootmp
+RUN mv /pentootmp/modules/*.lzm /gentoo && mv /pentootmp/image.squashfs /gentoo 
+## unpack ##
+RUN cd /gentoo  && tar --lzma -xvf *.lzm  
+## cleanup 
+RUN unsquashfs -f -d /gentoo /gentoo/image.squashfs  && rm /gentoo/image.squashfs  rm /gentoo/*.lzm
 
