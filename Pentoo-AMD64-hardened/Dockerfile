@@ -27,6 +27,7 @@ RUN cd /gentoo  && tar --lzma -xvf *.lzm
 ## cleanup 
 RUN unsquashfs -f -d /gentoo /pentootmp/image.squashfs  && rm /gentoo/image.squashfs 
 
+FROM scratch
 WORKDIR /
 COPY --from=builder /gentoo/ /
 CMD ["/bin/bash"]
