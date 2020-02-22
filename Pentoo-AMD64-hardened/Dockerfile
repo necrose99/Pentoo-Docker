@@ -19,8 +19,7 @@ ADD wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2 /gentoo
 RUN mkdir   /gentoo/packages && mkdir -p {/gentoo/var/gentoo/distfiles, /gentoo/var/db/repos/gentoo} 
 
 #Add Layman / portage stuffs. 
-mkdir /gentoo/etc/portage/package.accept_keywords 
-mkdir -p /gentoo/etc/portage/package.use 
+RUN mkdir /gentoo/etc/portage/package.accept_keywords  && mkdir -p /gentoo/etc/portage/package.use 
 ADD https://www.pentoo.ch/isos/latest-iso-symlinks/pentoo-full-amd64-hardened-latest.iso /pentootmp 
 RUN 7z x  /pentootmp/pentoo-full-amd64-hardened-latest.iso /pentootmp 
 ## unpack ##
