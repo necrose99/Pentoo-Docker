@@ -10,9 +10,9 @@ CHOST="x86_64-pc-linux-gnu"
 # These are the USE flags that were used in addition to what is provided by the
 # profile used for building.
 USE="bindist mmx sse sse2"
-PORTDIR="/usr/portage"
-DISTDIR="${PORTDIR}/distfiles"
-PKGDIR="/packages"
+PORTDIR="/vardb/repos/gentoo"
+DISTDIR="/var/gentoo/distfiles"
+PKGDIR="/packages/"
 ## swap to root packages
 PYTHON_TARGETS="python2_7 python3_7 python3_8 "
 PYTHON_SINGLE_TARGET="python3_6"
