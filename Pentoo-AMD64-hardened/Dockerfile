@@ -31,4 +31,4 @@ RUN unsquashfs -f -d /gentoo /pentootmp/image.squashfs  && rm /gentoo/image.squa
 WORKDIR /
 COPY --from=builder /gentoo/ /
 CMD ["/bin/bash"]
-RUN emerge --
+RUN emerge-webrsync && pentoo-updater 
