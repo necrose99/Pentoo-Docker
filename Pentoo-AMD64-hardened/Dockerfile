@@ -2,7 +2,7 @@ ARG BOOTSTRAP
 FROM ${BOOTSTRAP:necrose99/custom-alpine-builder:latest} as builder
 ###  pentoo Varriant 
 ### FROM alpine:3.7 as builder
-ARCH=amd64
+#ARCH=amd64
 #ARG BOOTSTRAP
 #FROM ${BOOTSTRAP:-alpine:latest} as builder
 #RUN apk add squashfs-tools 	p7zip
